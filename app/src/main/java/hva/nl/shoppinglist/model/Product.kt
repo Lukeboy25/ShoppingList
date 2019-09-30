@@ -1,4 +1,4 @@
-package hva.nl.shoppinglist
+package hva.nl.shoppinglist.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

@@ -1,9 +1,10 @@
-package hva.nl.shoppinglist
+package hva.nl.shoppinglist.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import hva.nl.shoppinglist.model.Product
 
 @Database(entities = [Product::class], version = 1, exportSchema = false)
 abstract class ShoppingListRoomDatabase : RoomDatabase() {
@@ -21,7 +22,10 @@ abstract class ShoppingListRoomDatabase : RoomDatabase() {
                 synchronized(ShoppingListRoomDatabase::class.java) {
                     if (shoppingListRoomDatabaseInstance == null) {
                         shoppingListRoomDatabaseInstance =
-                            Room.databaseBuilder(context.applicationContext,ShoppingListRoomDatabase::class.java, DATABASE_NAME).build()
+                            Room.databaseBuilder(context.applicationContext,
+                                ShoppingListRoomDatabase::class.java,
+                                DATABASE_NAME
+                            ).build()
                     }
                 }
             }

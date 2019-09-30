@@ -1,6 +1,7 @@
-package hva.nl.shoppinglist
+package hva.nl.shoppinglist.database
 
 import androidx.room.*
+import hva.nl.shoppinglist.model.Product
 
 @Dao
 interface ProductDao {
